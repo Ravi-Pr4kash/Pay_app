@@ -1,8 +1,10 @@
 const mongoose = require("mongoose");
 
 require("dotenv").config();
+console.log("MONGODB_URI =", process.env.MONGODB_URI);
+console.log("MONGO_URI =", process.env.MONGO_URI);
 mongoose
-  .connect(`${process.env.MONGO_URL}`)
+  .connect(`${process.env.MONGODB_URI}`)
   .then(() => {
     console.log("connected to mongoDB");
   })
